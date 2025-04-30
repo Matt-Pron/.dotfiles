@@ -1,0 +1,69 @@
+{
+    "layer": "top",
+    "output": "LVDS-1",
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock", "custom/weather"],
+    "modules-right": ["network", "backlight", "battery", "custom/power"],
+    "hyprland/workspaces": {
+	    "disable-scroll": true,
+	    "all-outputs": true,
+	    "format": "{name}", /*"{icon}"*/
+	    "format-icons": {
+		    "urgent": "  ",
+		    "focused": "  ",
+		    "default": "  ",
+		    "active": "  "
+	    }
+    },
+    "clock": {
+	"format": "{:%a %e, %H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%d-%m-%Y}"
+    },
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+	"interval": 30,
+        "states": {
+            "good": 100,
+            "warning": 50,
+            "critical": 25
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{signalStrength}% ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "custom/power": {
+        "format" : "⏻ ",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-actions": {
+			"shutdown": "shutdown",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate"
+		}
+    },
+    "custom/weather": {
+	"format": "{}°",
+	"tooltip": true,
+	"interval": 600,
+	"exec": "wttrbar",
+	"return-type": "json"
+    }
+}

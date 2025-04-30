@@ -1,0 +1,86 @@
+* {
+    all: unset;
+    border: none;
+    border-radius: 0;
+    font-family: monospace, Cantarell, NotoEmoji;
+    font-size: 10px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: #1d2021;
+    border-bottom: 1px solid #d4be98;
+    color: #ebdbb2;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: #ebdbb2;
+    border-bottom: 1px solid transparent;
+}
+
+#workspaces button.focused {
+    background: #ebdbb2;
+    color: #1d2021;
+    border-bottom: 1px solid #ebdbb2;
+}
+
+#workspaces button.active {
+    background: #32302f;
+    color: #89b482;
+    font-weight: bold;
+    border-bottom: 1px solid #ebdbb2;
+}
+
+tooltip {
+    background: rgba(29, 32, 33, 0.9);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(235, 219, 178, 0.9);
+}
+
+#cpu,
+#memory,
+#pulseaudio,
+#network,
+#battery,
+#clock,
+#custom-playerctl {
+    padding: 0 10px;
+    margin: 0 5px;
+}
+
+#battery.charging {
+    color: #a9b665;
+}
+
+#battery.warning:not(.charging) {
+    color: #d79921;
+}
+
+@keyframes blink {
+    to {
+	    background-color: #1d2021;
+	    color: #ebdbb2;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background: #cc241d;
+    color: #ebdbb2;
+    border-bottom: 1px solid #ebdbb2;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#network.disconnected {
+    color: #cc241d;
+}
+
+#pulseaudio.muted {
+    color: #cc241d;
+}
