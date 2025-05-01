@@ -32,6 +32,7 @@ return {
                 {
                     name = "rol",
                     path = "~/notas/rol",
+                    notes_subdir = "data",
                 },
             },
 
@@ -40,7 +41,7 @@ return {
             -- dir = "~/vaults/work",
 
             -- Optional, if you keep notes in a specific subdirectory of your vault.
-            notes_subdir = "new",
+            -- notes_subdir = "new",
 
             -- Optional, set the log level for obsidian.nvim. This is an integer corresponding to one of the log
             -- levels defined by "vim.log.levels.*".
@@ -119,7 +120,7 @@ return {
                         suffix = suffix .. string.char(math.random(65, 90))
                     end
                 end
-                return tostring(os.time()) .. "-" .. suffix
+                return suffix--tostring(os.time()) .. "-" .. suffix
             end,
 
             -- Optional, customize how note file names are generated given the ID, target directory, and title.
@@ -136,10 +137,11 @@ return {
             --  * "prepend_note_id", e.g. '[[foo-bar|Foo Bar]]'
             --  * "prepend_note_path", e.g. '[[foo-bar.md|Foo Bar]]'
             --  * "use_path_only", e.g. '[[foo-bar.md]]'
+            wiki_link_func = "use_alias_only",
             -- Or you can set it to a function that takes a table of options and returns a string, like this:
-            wiki_link_func = function(opts)
-                return require("obsidian.util").wiki_link_id_prefix(opts)
-            end,
+            --wiki_link_func = function(opts)
+            --    return require("obsidian.util").wiki_link_id_prefix(opts)
+            --end,
 
             -- Optional, customize how markdown links are formatted.
             markdown_link_func = function(opts)
@@ -151,7 +153,7 @@ return {
 
             -- Optional, boolean or a function that takes a filename and returns a boolean.
             -- `true` indicates that you don't want obsidian.nvim to manage frontmatter.
-            disable_frontmatter = false,
+            -- disable_frontmatter = false,
 
             -- Optional, alternatively you can customize the frontmatter data.
             ---@return table
@@ -274,7 +276,7 @@ return {
             -- Optional, configure additional syntax highlighting / extmarks.
             -- This requires you have `conceallevel` set to 1 or 2. See `:help conceallevel` for more details.
             ui = {
-                enable = true,  -- set to false to disable all additional syntax features
+                enable = false,  -- set to false to disable all additional syntax features
                 update_debounce = 200,  -- update delay after a text change (in milliseconds)
                 max_file_length = 5000,  -- disable UI features for files with more than this many lines
                 -- Define how various check-boxes are displayed
