@@ -2,7 +2,7 @@
     all: unset;
     border: none;
     border-radius: 0;
-    font-family: monospace, Cantarell, NotoEmoji;
+    font-family: monospace, Cantarell, NotoEmojiMonochrome;
     font-size: 10px;
     min-height: 0;
 }

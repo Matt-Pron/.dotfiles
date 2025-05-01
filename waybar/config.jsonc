@@ -63,7 +63,7 @@
 	"format": "{}°",
 	"tooltip": true,
 	"interval": 600,
-	"exec": "wttrbar",
+	"exec": "wttrbar --location mar-del-plata",
 	"return-type": "json"
     }
 }
