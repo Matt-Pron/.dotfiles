@@ -11,7 +11,8 @@ return {
 	-- OpenGL for GPU acceleration, Software for CPU
 	front_end = "OpenGL",
 
-	color_scheme = 'Catppuccin Mocha',
+	color_scheme = 'GruvboxDarkHard',
+	--color_scheme = 'Gruvbox Material (Gogh)',
 
 	-- Font config
 	font = font_with_fallback(font_name),
@@ -35,10 +36,10 @@ return {
 	dpi = 96.0,
 
 	-- Cursor style
-	default_cursor_style = "BlinkingUnderline",
+	--default_cursor_style = "BlinkingUnderline",
 
 	-- X11
-	enable_wayland = true,
+	enable_wayland = false,
 
 	-- Keybinds
 	disable_default_key_bindings = true,
@@ -143,10 +144,10 @@ return {
 	bold_brightens_ansi_colors = true,
 	-- Padding
 	window_padding = {
-		left = 25,
-		right = 25,
-		top = 25,
-		bottom = 25,
+		left = 0,
+		right = 0,
+		top = 0,
+		bottom = 0,
 	},
 
 	-- Tab Bar
@@ -158,7 +159,7 @@ return {
 	-- General
 	automatically_reload_config = true,
 	inactive_pane_hsb = { saturation = 1.0, brightness = 1.0 },
-	window_background_opacity = 0.9,
+	window_background_opacity = 0.95,
 	window_close_confirmation = "NeverPrompt",
   window_frame = { active_titlebar_bg = "#45475a", font = font_with_fallback(font_name, { bold = true }) },
 }
