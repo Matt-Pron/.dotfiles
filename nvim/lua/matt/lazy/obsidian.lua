@@ -27,14 +27,14 @@ return {
             workspaces = {
                 {
                     name = "notas",
-                    path = "~/notas/notas",
+                    path = "~/notas",
                     overrides = {
                         notes_subdir = "",
                     },
                 },
                 {
                     name = "rol",
-                    path = "~/notas/rol",
+                    path = "~/rol",
                     overrides = {
                         notes_subdir = "data",
                     },
