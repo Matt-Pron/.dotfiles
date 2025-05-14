@@ -11,8 +11,8 @@ return {
 	-- OpenGL for GPU acceleration, Software for CPU
 	front_end = "OpenGL",
 
-	color_scheme = 'GruvboxDarkHard',
-	--color_scheme = 'Gruvbox Material (Gogh)',
+	--color_scheme = 'GruvboxDarkHard',
+	color_scheme = 'Gruvbox Material (Gogh)',
 
 	-- Font config
 	font = font_with_fallback(font_name),
